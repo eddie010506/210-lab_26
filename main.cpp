@@ -186,6 +186,7 @@ int main() {
     
     }
     //moving the print out of the loop
+    //the time for read list and set is super big on my program and can not find why
     cout << "Number of simulations: " << NUM_RUNS << endl;
     string labels[] = {"Read", "Sort", "Insert", "Delete"};
     cout << setw(W1) << "Operation" << setw(W1) << "Vector" << setw(W1) << "List"
