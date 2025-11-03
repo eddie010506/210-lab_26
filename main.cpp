@@ -96,7 +96,7 @@ int main() {
                 }
             }
         }
-        for (int i = 0; i < STRUCTURES; i++) {
+        for (int i = 0; i < STRUCTURES; i++) {// loop to add on the accum cum
             if (results[CURRENT][1][i] != -1) { // set sort is not needed
                 results[ACCUM][1][i] += results[CURRENT][1][i];
             }
@@ -133,7 +133,7 @@ int main() {
                 }
             }
         }
-        for (int i = 0; i < STRUCTURES; i++) {
+        for (int i = 0; i < STRUCTURES; i++) {// loop to add on the accum cum
             results[ACCUM][2][i] += results[CURRENT][2][i];
         }
 
@@ -178,7 +178,7 @@ int main() {
                 }
             }
         }
-        for (int i = 0; i < STRUCTURES; i++) {
+        for (int i = 0; i < STRUCTURES; i++) {// loop to add on the accum cum
             results[ACCUM][3][i] += results[CURRENT][3][i];
         }
 
