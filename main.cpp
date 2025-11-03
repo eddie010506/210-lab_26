@@ -19,7 +19,7 @@ const int CURRENT = 0;
 const int ACCUM = 1;// adding constants
 
 int main() {
-    long long results[2][ROWS][COLS];// making 3d array so changing all the results in to 3d
+    long long results[2][ROWS][COLS]={0};// making 3d array so changing all the results in to 3d
     string cd;
     vector<string> data_vector;
     list<string> data_list;
@@ -63,8 +63,9 @@ int main() {
                     break;
                 }
             
-            fin.close();
+            
             }
+            fin.close();
         }
     // making loops for read sort insert delete to add on the array
         for ( int i = 0; i<STRUCTURES; i++){
@@ -184,7 +185,6 @@ int main() {
 
     
     }
-    return 0;
     //moving the print out of the loop
     cout << "Number of simulations: " << NUM_RUNS << endl;
     string labels[] = {"Read", "Sort", "Insert", "Delete"};
@@ -196,6 +196,6 @@ int main() {
             cout << setw(W1) << results[ACCUM][i][j]/NUM_RUNS;
         cout << endl;
     }
-    
+    return 0;
     
 }
