@@ -25,12 +25,16 @@ int main() {
     list<string> data_list;
     set<string> data_set;
 
+    for ( int run = 0; run < NUM_RUNS; run ++){// forgot to add a loop for the code
+        // putting the code inside this loop
+        
+    
     // testing for READ operations
-    for (int i = 0; i < STRUCTURES; i++) {
-        ifstream fin("codes.txt");
-        auto start = chrono::high_resolution_clock::now();
-        switch(i) {
-            case 0: {  // read into a vector
+        for (int i = 0; i < STRUCTURES; i++) {
+            ifstream fin("codes.txt");
+            auto start = chrono::high_resolution_clock::now();
+            switch(i) {
+                case 0: {  // read into a vector
                 while (fin >> cd)
                         data_vector.push_back(cd);
                 auto end = chrono::high_resolution_clock::now();
@@ -57,6 +61,10 @@ int main() {
         }
         fin.close();
     }
+    // making loops for read sort insert delete to add on the array
+    for ( int i = 0; i<STRUCTURES; i++){
+        results[ACCUM][0][i] += results[CURRENT][0][i];
+    }
 
     // testing for SORT operations
     for (int i = 0; i < STRUCTURES; i++) {
@@ -80,6 +88,11 @@ int main() {
                 results[CURRENT][1][i] = -1;
                 break;
             }
+        }
+    }
+    for (int i = 0; i < STRUCTURES; i++) {
+        if (results[CURRENT][1][i] != -1) { // set sort is not needed
+            results[ACCUM][1][i] += results[CURRENT][1][i];
         }
     }
 
@@ -113,6 +126,9 @@ int main() {
                 break;
             }
         }
+    }
+    for (int i = 0; i < STRUCTURES; i++) {
+        results[ACCUM][2][i] += results[CURRENT][2][i];
     }
 
     // testing for DELETE operations
@@ -155,6 +171,9 @@ int main() {
                 break;
             }
         }
+    }
+    for (int i = 0; i < STRUCTURES; i++) {
+        results[ACCUM][3][i] += results[CURRENT][3][i];
     }
 
     string labels[] = {"Read", "Sort", "Insert", "Delete"};
